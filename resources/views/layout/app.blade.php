@@ -35,7 +35,6 @@
     <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/components/custom-modal.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('plugins/pricing-table/css/component.css') }}" rel="stylesheet" type="text/css" />
-   
     @endif
     @if (Route::is('datatable') && (Cookie::get('dark_mode') == '1'))
         <link rel="stylesheet" type="text/css" href="{{ asset('dark/plugins/table/datatable/datatables.css') }}">

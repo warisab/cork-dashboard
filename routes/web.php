@@ -41,5 +41,8 @@ Route::get('/datatables/table', function () {
 Route::get('/menu/user-profile', function () {
     return view('pages.user_profile');
 })->name('user-profile');
+Route::get('/registration', function () {
+    return view('pages.register_boxed');
+})->name('registration_boxed');
 Route::GET('/setCookie', [SetCookieController::class, 'setCookie'])->name('setCookie');
 Route::get('/getCookie', [SetCookieController::class, 'getCookie'])->name('getCookie');

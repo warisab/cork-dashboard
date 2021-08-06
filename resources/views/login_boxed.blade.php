@@ -48,7 +48,7 @@
                                     </a>
                                 </div>
 
-                                <p class="signup-link">Not registered ? <a href="auth_register_boxed.html">Create an account</a></p>
+                                <p class="signup-link">Not registered ? <a href="{{ route('registration_boxed') }}">Create an account</a></p>
 
                             </div>
                         </form>
