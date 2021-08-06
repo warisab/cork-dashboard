@@ -31,7 +31,7 @@
             <div class="page-header" style="margin-top: 7px;">
                 <div class="toggle-switch">
                     <label class="switch s-icons s-outline  s-outline-secondary">
-                        <input type="checkbox" class="theme-shifter" id="theme-shifter" @if(Cookie::get('dark_mode')) value="1" @else value=0 @endif  name="checkbox">
+                        <input type="checkbox" @if(Cookie::get('dark_mode') == '0' ) checked="checked" @elseif(Cookie::get('dark_mode') == '1' ) @endif class="theme-shifter" id="theme-shifter" @if(Cookie::get('dark_mode')) value="1" @else value=0 @endif  name="checkbox">
                         <span class="slider round">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
