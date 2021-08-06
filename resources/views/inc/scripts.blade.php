@@ -62,12 +62,11 @@
     })
 </script>
 <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> --}}
+
 <script>
-   window.onload=Cookiee();
+
     $('#theme-shifter').click(function(){    
-       Cookie();
-    });
-function Cookie(){
     var value=$('#theme-shifter').val();
         $.ajax({
             type: "GET",
@@ -78,7 +77,8 @@ function Cookie(){
 
             },
         });
-}
+    });
+
 function Cookiee(){
     var value=$('#theme-shifter').val();
         $.ajax({
@@ -86,9 +86,12 @@ function Cookiee(){
             url: '{{ route('setCookie') }}',
             data: {value:value},
             success: function(response) {
-
             },
         });
 }
 </script>
+@if((Cookie::get('dark_mode') == '0') || (Cookie::get('dark_mode') == '1'))
 
+@else
+        <script> window.onload = Cookiee();</script>
+@endif
