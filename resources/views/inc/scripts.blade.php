@@ -61,11 +61,14 @@
         }
     })
 </script>
+<script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
 <script>
-    $(document).ready(function(){
-        $('#theme-shifter').click(function(){
-        var value=$('#theme-shifter').val();
-  
+   window.onload=Cookiee();
+    $('#theme-shifter').click(function(){    
+       Cookie();
+    });
+function Cookie(){
+    var value=$('#theme-shifter').val();
         $.ajax({
             type: "GET",
             url: '{{ route('setCookie') }}',
@@ -75,8 +78,17 @@
 
             },
         });
-       
-    });
-})
+}
+function Cookiee(){
+    var value=$('#theme-shifter').val();
+        $.ajax({
+            type: "GET",
+            url: '{{ route('setCookie') }}',
+            data: {value:value},
+            success: function(response) {
+
+            },
+        });
+}
 </script>
 
